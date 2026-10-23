@@ -55,3 +55,39 @@ if (menuToggle && navCenter && navLinks) {
 
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
+
+// Highlight the active navigation item while scrolling
+const menuItems = document.querySelectorAll(
+  '#navLinks a[href^="#"]'
+);
+
+const sections = Array.from(menuItems)
+  .map((link) => {
+    return document.querySelector(link.getAttribute("href"));
+  })
+  .filter((section) => section !== null);
+
+function updateActiveNav() {
+  let currentSection = "";
+
+  const scrollPosition = window.scrollY + 150;
+
+  sections.forEach((section) => {
+    if (scrollPosition >= section.offsetTop) {
+      currentSection = section.id;
+    }
+  });
+
+  menuItems.forEach((link) => {
+    const isActive =
+      link.getAttribute("href") === `#${currentSection}`;
+
+    link.classList.toggle("active", isActive);
+  });
+}
+
+window.addEventListener("scroll", updateActiveNav, {
+  passive: true
+});
+
+window.addEventListener("load", updateActiveNav);
