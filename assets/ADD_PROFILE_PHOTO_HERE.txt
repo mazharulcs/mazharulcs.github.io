@@ -1,0 +1,1 @@
+Place your portrait in this folder as profile.jpg. The page references assets/profile.jpg.
