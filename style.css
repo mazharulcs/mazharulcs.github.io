@@ -97,9 +97,10 @@ button { font: inherit; }
 .theme-toggle:hover, .menu-toggle:hover { background: var(--accent-soft); border-color: var(--accent); }
 .theme-toggle:active, .menu-toggle:active { transform: scale(.96); }
 .theme-icon { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.moon-icon { display: none; }
-html[data-theme="dark"] .sun-icon { display: none; }
-html[data-theme="dark"] .moon-icon { display: block; }
+.moon-icon { display: inline; }
+.sun-icon { display: none;}
+html[data-theme="dark"] .sun-icon { display: inline; }
+html[data-theme="dark"] .moon-icon { display: none; }
 .menu-toggle { display: none; border-radius: 10px; font-size: 19px; }
 
 /* ===== Profile and sections ===== */
